@@ -56,7 +56,7 @@ public class FinanceOutcome extends HSMS
                 case(1):
                     expenditureRecord();
                     break;
-                case(2):
+                case(0):
                     System.out.println("Bye!");
                     flag = false;
                     break;
@@ -75,29 +75,44 @@ public class FinanceOutcome extends HSMS
         System.out.println("2. Create a record");
         System.out.println("3. Modify a record");
         System.out.println("4. Delete a record");
+        System.out.println("0. Exit");
         System.out.print("Please choose an option >>>   ");
         user_option = scan.nextInt();
-        
-        switch(user_option)
+            
+        while (user_option != 0)
         {
-            case (1):
-                exDisplayRecord();
-                break;
-            case (2):
-                exCreateRecord();
-                break;
-            case(3):
-                System.out.println("Type the title to search: ");
-                search_title = scan.next();
-                exModifyRecord(getIndexNum(search_title));
-                break;
-            case(4):
-                System.out.println("Type the title to search: ");
-                search_title = scan.next();
-                exDeleteRecord(getIndexNum(search_title));
-                break;
-        }
+            System.out.println("---------------Expenditure record DB--------------");
+            System.out.println("1. Display a record");
+            System.out.println("2. Create a record");
+            System.out.println("3. Modify a record");
+            System.out.println("4. Delete a record");
+            System.out.println("0. Exit");
+            System.out.print("Please choose an option >>>   ");
+            user_option = scan.nextInt();
         
+        
+            switch(user_option)
+            {
+                case (1):
+                    exDisplayRecord();
+                    break;
+                case (2):
+                    exCreateRecord();
+                    break;
+                case(3):
+                    System.out.println("Type the title to search: ");
+                    search_title = scan.next();
+                    exModifyRecord(getIndexNum(search_title));
+                    break;
+                case(4):
+                    System.out.println("Type the title to search: ");
+                    search_title = scan.next();
+                    exDeleteRecord(getIndexNum(search_title));
+                    break;
+            }
+        }
+        System.out.println("Good bye!");
+        System.exit(0);
     }
     
     private void exDisplayRecord()
@@ -167,22 +182,22 @@ public class FinanceOutcome extends HSMS
         user_category = displayCategory();
         
         System.out.print("Title >>>   ");
-        input_title = scan.next();
+        input_title = scan.next() + scan.nextLine();
         System.out.println();
         System.out.print("Date >>>   ");
-        input_date = scan.next();
+        input_date = scan.next() + scan.nextLine();
         System.out.println();
         System.out.print("Amount of spent >>>   ");
         input_amountspent = scan.nextDouble();
         System.out.println();
         System.out.print("Location >>>   ");
-        input_location = scan.next();
+        input_location = scan.next() + scan.nextLine();
         System.out.println();
         System.out.print("Employee ID in charge >>>   ");
         input_emplIDcharge = scan.nextInt();
         System.out.println();
         System.out.print("Description >>>   ");
-        input_description = scan.next();
+        input_description = scan.next() + scan.nextLine();
         System.out.println();
         
         //add all input information to arraylist
@@ -251,12 +266,12 @@ public class FinanceOutcome extends HSMS
                 break;
             case (2):
                 System.out.println("Enter a new title: ");
-                new_title = scan.next();                   
+                new_title = scan.next() + scan.nextLine();                   
                 modifyTitle(index, new_title);
                 break;
             case (3):
                 System.out.println("Enter a new date: ");
-                new_date = scan.next();
+                new_date = scan.next() +scan.nextLine();
                 modifyDate(index, new_date);
             case (4):
                 System.out.println("Enter a new amount: ");
@@ -265,7 +280,7 @@ public class FinanceOutcome extends HSMS
                 break;
             case (5):
                 System.out.println("Enter a new location: ");
-                new_location = scan.next();
+                new_location = scan.next() + scan.nextLine();
                 modifyLocation(index, new_location);
                 break;
             case(6):
@@ -275,7 +290,7 @@ public class FinanceOutcome extends HSMS
                 break;
             case(7):
                 System.out.println("Enter a new description: ");
-                new_description = scan.next();
+                new_description = scan.next() + scan.nextLine();
                 modifyDescription(index, new_description);
                 break;
         }

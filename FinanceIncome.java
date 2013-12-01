@@ -76,7 +76,7 @@ public class FinanceIncome extends HSMS
                     indexNumber = getIndexNum(donator_name);
                     deleteInfo(indexNumber);
                     break;
-                case(5):
+                case(0):
                     flag = false;
                     break;
             }
@@ -114,19 +114,19 @@ public class FinanceIncome extends HSMS
     {
         System.out.println("Create a new form for donation information");
         System.out.print("1. Donator Name >>>    ");
-        donator = scan.next();
+        donator = scan.next() + scan.nextLine();
         System.out.println();
         System.out.print("2. Amount of donation >>>   ");
         amountOfDonation = scan.nextDouble();
         System.out.println();
         System.out.print("3. duration >>>   ");
-        duration = scan.next();
+        duration = scan.next() + scan.nextLine();
         System.out.println();
         System.out.print("4. Employee ID in charge >>>   ");
         emplID_in_charge = scan.nextInt();
         System.out.println();
         System.out.print("5. Description/Note >>>   ");
-        description = scan.next();
+        description = scan.next() + scan.nextLine();
         System.out.println();
         
         //Insert the information into list
@@ -167,7 +167,7 @@ public class FinanceIncome extends HSMS
             {
                 case(1):
                     System.out.println("New donator's name: ");
-                    new_name = scan.next();
+                    new_name = scan.next() + scan.nextLine();
                     modifyDonator(indexNum, new_name);
                     break;
                 case(2):
@@ -177,7 +177,7 @@ public class FinanceIncome extends HSMS
                     break;
                 case(3):
                     System.out.println("New duration: ");
-                    new_duration = scan.next();
+                    new_duration = scan.next() + scan.nextLine();
                     modifyDuration(indexNum, new_duration);
                     break;
                 case(4):
@@ -187,7 +187,7 @@ public class FinanceIncome extends HSMS
                     break;
                 case(5):
                     System.out.println("New description: ");
-                    new_description = scan.next();
+                    new_description = scan.next() + scan.nextLine();
                     modifyDescription(indexNum, new_description);
                     break;
             }

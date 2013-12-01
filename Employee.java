@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 public class Employee extends Person {
 	
 	private static int numberOfEmployees = 0;
-	private static ArrayList<Employee> employees = new ArrayList<>();
+	private static ArrayList<Employee> employees = new ArrayList<Employee>();
 
 	private double   hourlyPay    = 0;
 	private double   hoursWorked  = 0;

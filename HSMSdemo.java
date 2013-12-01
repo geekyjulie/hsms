@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 public class HSMSdemo
 {
@@ -19,7 +21,7 @@ public class HSMSdemo
         empl_id = scan.nextInt();
         System.out.println();
         System.out.print("Employee Name >>  ");
-        empl_name = scan.next();
+        empl_name = scan.next() + scan.nextLine();
         System.out.println();
         System.out.print("Department ID number >>  ");
         empl_dept_num = scan.nextInt();
@@ -91,6 +93,9 @@ public class HSMSdemo
         
         switch(user_menu)
         {
+            case(0):
+                System.out.println("Good bye!");
+                System.exit(0);
             case(1):
                 System.out.println("Accessing Donation records....");
                 FinanceIncome userIncome = new FinanceIncome(id, name, dept);

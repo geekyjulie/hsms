@@ -9,7 +9,7 @@ import java.util.GregorianCalendar;
 public class Volunteer extends Person {
 
 	private static int                  numberOfVolunteers = 0;
-	private static ArrayList<Volunteer> volunteers         = new ArrayList<>();
+	private static ArrayList<Volunteer> volunteers         = new ArrayList<Volunteer>();
 	
 	private Location workLocation     = Location.UNASSIGNED;
 	private double   hoursVolunteered = 0;

@@ -15,7 +15,7 @@ import java.util.GregorianCalendar;
 public class Person {
 	
 	private static int               numberOfPersons = 0;
-	private static ArrayList<Person> persons         = new ArrayList<>();
+	private static ArrayList<Person> persons         = new ArrayList<Person>();
 	
 
 	private String            firstName = null;//first name of a person
