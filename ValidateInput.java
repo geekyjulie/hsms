@@ -63,7 +63,7 @@ public class ValidateInput {
 	
 	public static void printDate( GregorianCalendar date ){
 		SimpleDateFormat df = new SimpleDateFormat();
-        df.applyPattern("M/dd/YYYY");
+        df.applyPattern("M/dd/yyyy");
         System.out.println(df.format(date.getTime()));
 		
 	}
