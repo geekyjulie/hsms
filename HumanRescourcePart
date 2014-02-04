@@ -1,0 +1,149 @@
+import java.util.GregorianCalendar;
+/**
+ * 
+ * @author Michaela
+ * Represents and creates an employee for the homeless shelters
+ */
+
+public class Employee extends Person {
+
+	private double hourlyPay    = 0;
+	private double hoursWorked  = 0;
+	private String workLocation = "default"; 
+	
+	
+	private ValidateInput one = new ValidateInput(); //will let the Employee-methods use the input validation methods
+	
+	/**
+	 * Default constructor
+	 * Sets firstName to Demo
+	 *                           lastName  to Demo
+	 *                           birthDate to today's date
+	 */
+	public Employee(){
+		super();
+		
+		hourlyPay = 0;
+		hoursWorked = 0;
+		workLocation = null;
+		
+	}
+	/**
+	 * Constructor: Sets
+	 * @param first
+	 * @param last to the first and last name respectively.
+	 * sets hourlyPay, hoursWorked, and workLocation to zero
+	 */
+	public Employee(String first, String last){
+		super(first,last);
+		
+		hourlyPay = 0;
+		hoursWorked = 0;
+		workLocation = "no location yet";
+	}
+	
+	/**
+	 * Constructor: 
+	 * Sets
+	 * @param first
+	 * @param last
+	 * @param DOB
+	 * and sets horlyPay, hoursWorked, and workLcation to zero
+	 */
+	public Employee(String first, String last, GregorianCalendar DOB){
+		super(first,last, DOB);
+		
+		hourlyPay = 0;
+		hoursWorked = 0;
+		workLocation = "no location yet";
+	}
+	/**
+	 * Constructor: 
+	 * Sets
+	 * @param first
+	 * @param last
+	 * @param DOB
+	 * @param hourlyPay
+	 * @param hoursWorked
+	 * @param workLocation
+	 * to values contained in the parameters
+	 */
+	public Employee(String first, String last, GregorianCalendar DOB, double hourlyPay, double hoursWorked, String workLocation){
+		super(first, last, DOB);
+		this.hourlyPay = hourlyPay;
+		this.hoursWorked = hoursWorked;
+		this.workLocation = workLocation;
+	}
+	
+	//--------------------Getters and Setters----------------------------------
+	
+	/**
+	 * Getter:
+	 * Returns hourlyPay
+	 */
+	public double getHourlyPay() {
+		return hourlyPay;
+	}
+	
+	/**
+	 * Setter:
+	 * @param hourlyPay
+	 * method does not accept a negative number. Gives an error message if it is less or equal to zero.
+	 */
+	public void setHourlyPay(double hourlyPay) {
+		
+		if(hourlyPay<=0){
+			
+			System.out.println("Error, hourly pay cannot be less or equal to zero");
+			return;
+			
+		}else{
+			
+			this.hourlyPay = hourlyPay;
+		}
+	}
+	
+	/**
+	 * Getter:
+	 * @return hoursWorked
+	 * 
+	 */
+	public double getHoursWorked() {
+		return hoursWorked;
+	}
+	
+	/**
+	 * Setter:
+	 * @param hoursWorked
+	 * method does not accept a negative number. Gives an error message if it is less or equal to zero.
+	 */
+	public void setHoursWorked(double hoursWorked) {
+		if(hoursWorked<=0){
+			System.out.println("Error, hours worked cannot be less or equal to zero");
+			return;
+		}else{
+			
+		this.hoursWorked = hoursWorked;
+		
+		}
+	}
+	
+	/**
+	 * Getter:
+	 * @return workLoaction
+	 */
+	public String getWorkLocation() {
+		return workLocation;
+	}
+	
+	/**
+	 * Setter:
+	 * @param workLocation
+	 * workLocation has to match one of the preset work locations
+	 */
+	public void setWorkLocation(String workLocation) {
+		this.workLocation = workLocation;
+	}
+	
+	
+}
